@@ -124,7 +124,7 @@ CREATE TABLE `t_char` (
   `visualgem` text,
   `isolditem` smallint(6) NOT NULL DEFAULT '0',
   `uipoint` int(11) NOT NULL DEFAULT '0',
-  `AskYuanBao` int(11) NOT NULL,
+  `AskYuanBao` int(11) NOT NULL DEFAULT '0',
   `zengdian` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`aid`),
   UNIQUE KEY `Index_char_charguid` (`charguid`),
@@ -221,7 +221,7 @@ INSERT INTO `t_city_building` VALUES ('14', '2', '15', '36', '0', '0000000000000
 INSERT INTO `t_city_building` VALUES ('15', '2', '17', '32', '0', '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', '0', '0');
 
 -- ----------------------------
--- Table structure for t_city_info
+-- Table structure for9+6+qA 3
 -- ----------------------------
 DROP TABLE IF EXISTS `t_city_info`;
 CREATE TABLE `t_city_info` (
@@ -1354,7 +1354,7 @@ CREATE TABLE `t_xinfa` (
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `cacultotal`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `cacultotal`(
+CREATE PROCEDURE `cacultotal`(
 lowindex        int,
 highindex       int)
 begin
@@ -1379,7 +1379,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `create_newchar`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `create_newchar`(
+CREATE PROCEDURE `create_newchar`(
 paccname              varchar(50) binary,
 pcharname             varchar(50) binary,
 psex                  smallint,
@@ -1430,7 +1430,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `delete_char_new`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `delete_char_new`(
+CREATE PROCEDURE `delete_char_new`(
 pcharname             varchar(100),
 paccount              varchar(100),
 pcharguid             int,
@@ -1474,7 +1474,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `fetch_guid`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `fetch_guid`()
+CREATE PROCEDURE `fetch_guid`()
 begin
 declare charguid  int default -1;
 start transaction;
@@ -1493,7 +1493,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `fetch_savetime`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `fetch_savetime`(
+CREATE PROCEDURE `fetch_savetime`(
 pcharguid	int
 )
 begin
@@ -1534,7 +1534,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `get_50level_list`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `get_50level_list`()
+CREATE PROCEDURE `get_50level_list`()
 begin
  select accname,charguid,charname,menpai,level,exp 
  from t_char 
@@ -1550,7 +1550,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `get_50money_list`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `get_50money_list`()
+CREATE PROCEDURE `get_50money_list`()
 begin
  select a.accname,a.charguid,a.charname,a.menpai, 
   (a.vmoney+a.bankmoney+if(isnull(b.profit),0,b.profit)+if(isnull(c.sbmoney),0,c.sbmoney)) as totalmoney
@@ -1568,7 +1568,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `get_50xinfa_list`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `get_50xinfa_list`()
+CREATE PROCEDURE `get_50xinfa_list`()
 begin
  drop table if exists tmp_xinfa;
  create temporary table tmp_xinfa
@@ -1612,7 +1612,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_charextra`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_charextra`(
+CREATE PROCEDURE `save_charextra`(
 pcharguid           int,
 pdbversion          int,
 pbuyyuanbao         int,
@@ -1682,7 +1682,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_cityinfo`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_cityinfo`(pcitydata longtext,ppoolid int,pisvalid int)
+CREATE PROCEDURE `save_cityinfo`(pcitydata longtext,ppoolid int,pisvalid int)
 begin
 declare rcount int;
 start transaction;
@@ -1704,7 +1704,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_cityinfo_bld`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_cityinfo_bld`(
+CREATE PROCEDURE `save_cityinfo_bld`(
 ppoolid int,
 pbdtype int,
 pbdid int,
@@ -1776,7 +1776,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_cityinfo_ext`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_cityinfo_ext`(
+CREATE PROCEDURE `save_cityinfo_ext`(
 ppoolid int,
 pfcityid1 int,
 pfboth1 smallint,
@@ -1905,7 +1905,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_cityinfo_new`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_cityinfo_new`(
+CREATE PROCEDURE `save_cityinfo_new`(
 ppoolid	int,
 pguildid	int,
 pscene	int,
@@ -2039,7 +2039,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_cshop`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_cshop`(
+CREATE PROCEDURE `save_cshop`(
 pworldid            int,
 pserverid           int,
 ppoolid             int,
@@ -2070,7 +2070,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_cshopitem`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_cshopitem`(
+CREATE PROCEDURE `save_cshopitem`(
 pcshopid            int,
 pcshoppos           int,
 pserial             int,
@@ -2114,7 +2114,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_findfriendad`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_findfriendad`(
+CREATE PROCEDURE `save_findfriendad`(
    ppoolid	                      int,           
    pcharguid                      int unsigned,          
    ptype                          smallint,     
@@ -2189,7 +2189,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_general_set`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_general_set`(
+CREATE PROCEDURE `save_general_set`(
 psKey                 varchar(50),
 pnVal                 int)
 begin
@@ -2216,7 +2216,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_global`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_global`(
+CREATE PROCEDURE `save_global`(
 ppoolid             int,
 pdata1              int
 )
@@ -2239,7 +2239,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_guild_user`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_guild_user`(
+CREATE PROCEDURE `save_guild_user`(
 pguildid      int,
 ppos          int,
 pcharguid     int,
@@ -2334,7 +2334,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_guildinfo`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_guildinfo`(
+CREATE PROCEDURE `save_guildinfo`(
 pguildid              int          ,
 pguildname            varchar(50)  ,
 pguildstat            int          ,
@@ -2476,7 +2476,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_guildinfo_new`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_guildinfo_new`(
+CREATE PROCEDURE `save_guildinfo_new`(
 pguildid      int,
 pguilddesc    varchar(150),
 pguildname    varchar(50),
@@ -2690,7 +2690,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_iteminfo`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_iteminfo`(
+CREATE PROCEDURE `save_iteminfo`(
 pcharguid             int,
 pguid                 int,
 pworld                int,
@@ -2784,7 +2784,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_league`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_league`(
+CREATE PROCEDURE `save_league`(
 pleagueid		int,
 pleaguename	    varchar(40),
 pleaguedesc	    varchar(80),
@@ -2844,7 +2844,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_league_apply`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_league_apply`(
+CREATE PROCEDURE `save_league_apply`(
 pleagueid		int,
 papplypos       int,
 papplyguildid	int,
@@ -2883,7 +2883,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_league_usr`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_league_usr`(
+CREATE PROCEDURE `save_league_usr`(
 pleagueid		int,
 pguildpos       int,
 pguildid        int,
@@ -2926,7 +2926,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_mailinfo`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_mailinfo`(p1 varchar(50),p2 varchar(50),p3 varchar(100),p4 varchar(300),p5 int,p6 int)
+CREATE PROCEDURE `save_mailinfo`(p1 varchar(50),p2 varchar(50),p3 varchar(100),p4 varchar(300),p5 int,p6 int)
 begin
 declare rcount int;
 start transaction;
@@ -2948,7 +2948,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_petiteminfo`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_petiteminfo`(ppairdata text,ppoolid int,pisvalid int)
+CREATE PROCEDURE `save_petiteminfo`(ppairdata text,ppoolid int,pisvalid int)
 begin
 declare rcount int;
 start transaction;
@@ -2970,7 +2970,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_shopinfo`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_shopinfo`(
+CREATE PROCEDURE `save_shopinfo`(
 psid                  int,
 ppoolid               int,
 pshopguid             varchar(50),
@@ -3076,7 +3076,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_shopinfo_new`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_shopinfo_new`(
+CREATE PROCEDURE `save_shopinfo_new`(
 psid                  int,
 ppoolid               int,
 pshopguid             varchar(50),
@@ -3186,7 +3186,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_shopinfo_stall`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_shopinfo_stall`(
+CREATE PROCEDURE `save_shopinfo_stall`(
 pshopguid             varchar(50),
 pstallid              int,
 pBox_Status           smallint,
@@ -3233,7 +3233,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_shopinfo_stall_buy`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_shopinfo_stall_buy`(
+CREATE PROCEDURE `save_shopinfo_stall_buy`(
 pshopguid             varchar(50),
 pstallid              int,
 pstallunitid          int,
@@ -3388,7 +3388,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_shopinfo_stall_itm`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_shopinfo_stall_itm`(
+CREATE PROCEDURE `save_shopinfo_stall_itm`(
 pshopguid             varchar(50),
 pstallid              int,
 pstallunitid          int,
@@ -3535,7 +3535,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `save_shopinfo_stall_pet`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`%.%.%.%` PROCEDURE `save_shopinfo_stall_pet`(
+CREATE PROCEDURE `save_shopinfo_stall_pet`(
 pshopguid             varchar(50),
 pstallid              int,
 pstallunitid          int,
